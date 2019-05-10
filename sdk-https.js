@@ -1,4 +1,4 @@
-console.log(pa_id, domain);
+console.log(pa_id, domain, 'ss');
 var PushdyIns = new function() {
     this.pa_id = pa_id;
     this.domain = domain || "localhost";
