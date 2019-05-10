@@ -1,3 +1,4 @@
+console.log(pa_id, domain);
 var PushdyIns = new function() {
     this.pa_id = pa_id;
     this.domain = domain || "localhost";
@@ -83,8 +84,6 @@ var PushdyIns = new function() {
 
     this.init = function(){
         var hostname = location.hostname.replace(/^www\./,'');
-        console.log(hostname);
-        console.log(this.domain);
         if(hostname.indexOf(this.domain)==(hostname.length - this.domain.length)){
             if(document.readyState==='complete'){
                 PushdyIns.checkSubscription();
