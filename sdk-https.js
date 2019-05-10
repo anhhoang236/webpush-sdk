@@ -1,6 +1,6 @@
 var PushdyIns = new function() {
     this.pa_id = pa_id;
-    this.domain = "localhost";
+    this.domain = domain || "localhost";
     this.pa_subdomain = "https://api.pushdi.com";
     this.appPublicKey = 'BNzsUTW74hbbeIJlPwFdR59UJ7QEtgKb3jguvOxTrAfhy5lkVESxADLMN5D7_5nnlxrKjWGUe9qaIhZyEBjZxeg';
     this.local_str = {
@@ -74,7 +74,7 @@ var PushdyIns = new function() {
         "subscriptionBtnDenyTxt": "LATER",
         "subscriptionBtnDenyColor": "#d3d3d3",
         "subscriptionBtnDenyTxtColor": "#888",
-        "subscriptionTitle": "Subscribe to our blog to get the latest updates.",
+        "subscriptionTitle": "Subscribe to our website to get the latest updates.",
         "subscriptionTitleTxtColor": "#333",
         "subscriptionMessage": "Click on Allow when prompted about Notification",
         "subscriptionMessageTxtColor": "#777",
@@ -97,7 +97,7 @@ var PushdyIns = new function() {
     
     this.initSW = function(){
         var hostname = location.hostname.replace(/^www\./,'');
-
+        console.log('here -1')
         if(hostname.indexOf(this.domain)==(hostname.length - this.domain.length)){
             var sw_url = "/sw.js";
             
@@ -110,6 +110,7 @@ var PushdyIns = new function() {
                                 PushdyIns.setCookie("pushdy_" +  "subs_status","subscribed",9999);
                                 PushdyIns.sendSub(pushSubscription, true)
                             }
+                            console.log('here 0')
                         });
                     }).catch(function(err) {
                         console.log(err)
