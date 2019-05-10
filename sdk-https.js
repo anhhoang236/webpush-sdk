@@ -84,7 +84,7 @@ var PushdyIns = new function() {
 
     this.init = function(){
         // var hostname = location.hostname.replace(/^www\./,'');
-        if(location.hostname.indexOf(this.domain) > -1){
+        if(location.href.indexOf(this.domain) > -1){
             if(document.readyState==='complete'){
                 PushdyIns.checkSubscription();
             }
@@ -98,7 +98,7 @@ var PushdyIns = new function() {
     
     this.initSW = function(){
         // var hostname = location.hostname.replace(/^www\./,'');
-        if(location.hostname.indexOf(this.domain) > -1){
+        if(location.href.indexOf(this.domain) > -1){
             var sw_url = "/sw.js";
             
             if ('serviceWorker' in navigator) {
